@@ -1,21 +1,21 @@
 ﻿using System;
+using _001_Calculator.Components;
 
-namespace _001_Calculator.Components
+namespace _001_Calculator
 {
     class Calculator
     {
 
-        private readonly CalculatorOperations operation = new CalculatorOperations();
-        private readonly CalculatorViews view = new CalculatorViews();
+        private static CalculatorOperations operation = new CalculatorOperations();
+        private static CalculatorViews view = new CalculatorViews();
         
-        public void Start()
+        public static void Start()
         {
-            //Window size configuration
-            {
+            #region Console Configuration (WindowsOnly)
 #pragma warning disable CA1416 // Validate platform compatibility
-                Console.SetWindowSize(58, 30);
+            Console.SetWindowSize(58, 30);
 #pragma warning restore CA1416 // Validate platform compatibility
-            }
+            #endregion
 
             view.StartMenu();
 
@@ -25,19 +25,19 @@ namespace _001_Calculator.Components
 
                 switch (userInput.Key)
                 {
-                    case ConsoleKey.Add:
+                    case ConsoleKey.Add: case ConsoleKey.D1:
                         operation.Addition();
                         view.SelectNextOperation();
                         break;
-                    case ConsoleKey.Subtract:
+                    case ConsoleKey.Subtract: case ConsoleKey.D2:
                         operation.Substraction();
                         view.SelectNextOperation();
                         break;
-                    case ConsoleKey.Multiply:
+                    case ConsoleKey.Multiply: case ConsoleKey.D3:
                         operation.Multiplication();
                         view.SelectNextOperation();
                         break;
-                    case ConsoleKey.Divide:
+                    case ConsoleKey.Divide: case ConsoleKey.D4:
                         operation.Division();
                         view.SelectNextOperation();
 

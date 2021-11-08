@@ -12,14 +12,18 @@ namespace _001_Calculator.Components
 
             Console.WriteLine($"{" ".PadRight(pad)} {msg} {" ".PadLeft(pad)}");
             Console.WriteLine(new string('-', elementCount));
+            Console.WriteLine("INFO : use symbol '.' for decimal delimitation !");
             Console.WriteLine("Press key for coresponding opperation :");
             Console.WriteLine(new string('-', elementCount));
 
-            Console.WriteLine("(+)   addition");
-            Console.WriteLine("(-)   substration");
-            Console.WriteLine("(*)   multiplication");
-            Console.WriteLine("(/)   division");
-            Console.WriteLine("(ESC) exit calculator");
+            Console.WriteLine();
+            Console.WriteLine("   KEYS     | OPERATION");
+            Console.WriteLine(new string('-', elementCount));
+            Console.WriteLine("  1 or  +   | addition");
+            Console.WriteLine("  2 or  -   | substration");
+            Console.WriteLine("  3 or  *   | multiplication");
+            Console.WriteLine("  4 or  /   | division");
+            Console.WriteLine("       ESC  | exit calculator");
 
             Console.WriteLine(new string('-', elementCount));
         }

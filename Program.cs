@@ -7,8 +7,7 @@ namespace _001_Calculator
     {
         static void Main(string[] args)
         {
-            Calculator calculator = new Calculator();
-            calculator.Start();
+            Calculator.Start();
         }
     }
 }

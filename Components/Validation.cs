@@ -16,6 +16,7 @@ namespace _001_Calculator.Components
                 Console.WriteLine("Error :: Please enter a valid number ");
                 Console.Write(requestMsg);
             }
+
             return result;
         }
 

@@ -10,7 +10,7 @@ namespace _001_Calculator.Components
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("\b \n");
-            Console.WriteLine($"Opperation {nameof(Addition)} has been selecte.");
+            Console.WriteLine($"Opperation {nameof(Addition)} has been selected.");
 
 
             double num1, num2;
@@ -26,7 +26,7 @@ namespace _001_Calculator.Components
             
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.Write("\b \n");
-            Console.WriteLine($"Opperation {nameof(Substraction)} has been selecte.");
+            Console.WriteLine($"Opperation {nameof(Substraction)} has been selected.");
             
 
             double num1, num2;
@@ -43,7 +43,7 @@ namespace _001_Calculator.Components
             
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("\b \n");
-            Console.WriteLine($"Opperation {nameof(Multiplication)} has been selecte.");
+            Console.WriteLine($"Opperation {nameof(Multiplication)} has been selected.");
             
 
             double num1, num2;
@@ -59,7 +59,7 @@ namespace _001_Calculator.Components
             
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write("\b \n");
-            Console.WriteLine($"Opperation {nameof(Division)} has been selecte.");
+            Console.WriteLine($"Opperation {nameof(Division)} has been selected.");
             
 
             double num1, num2;
