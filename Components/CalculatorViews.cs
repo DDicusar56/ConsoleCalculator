@@ -2,13 +2,13 @@
 
 namespace _001_Calculator.Components
 {
-    class CalculatorViews
+    internal class CalculatorViews
     {
-        public void StartMenu()
+        public static void StartMenu()
         {
-            int elementCount = 56;
-            string msg = "Welcome to Calculator";
-            int pad = (elementCount - msg.Length) / 2;
+            const int elementCount = 56;
+            var msg = "Welcome to Calculator";
+            var pad = (elementCount - msg.Length) / 2;
 
             Console.WriteLine($"{" ".PadRight(pad)} {msg} {" ".PadLeft(pad)}");
             Console.WriteLine(new string('-', elementCount));
@@ -33,8 +33,10 @@ namespace _001_Calculator.Components
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Gray;
 
-            int padding = 4;
-            string message = $"{"|".PadRight(padding)} choose opperation (+) : (-) : (*) : (\\) : (ESC){"|".PadLeft(padding)}";
+            // NOTE: padding const
+            const int padding = 4;
+            // NOTE: use var 
+            var message = $"{"|".PadRight(padding)} choose opperation (+) : (-) : (*) : (\\) : (ESC){"|".PadLeft(padding)}";
 
             Console.WriteLine(new string('-', message.Length));
             Console.WriteLine(message);

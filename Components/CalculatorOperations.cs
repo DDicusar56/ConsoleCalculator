@@ -2,10 +2,8 @@
 
 namespace _001_Calculator.Components
 {
-    class CalculatorOperations
+    internal class CalculatorOperations
     {
-        private readonly Validation validation = new Validation();
-
         public void Addition()
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -13,10 +11,10 @@ namespace _001_Calculator.Components
             Console.WriteLine($"Opperation {nameof(Addition)} has been selected.");
 
 
-            double num1, num2;
-            (num1, num2) = validation.GetUserNumbers();
+            decimal num1, num2;
+            (num1, num2) = Validation.GetUserNumbers();
 
-            double result = num1 + num2;
+            decimal result = num1 + num2;
 
             Console.WriteLine($"{num1} + {num2} = {result}");
         }
@@ -29,10 +27,10 @@ namespace _001_Calculator.Components
             Console.WriteLine($"Opperation {nameof(Substraction)} has been selected.");
             
 
-            double num1, num2;
-            (num1, num2) = validation.GetUserNumbers();
+            decimal num1, num2;
+            (num1, num2) = Validation.GetUserNumbers();
 
-            double result = num1 - num2;
+            decimal result = num1 - num2;
 
             Console.WriteLine($"{num1} - {num2} = {result}");
 
@@ -44,12 +42,12 @@ namespace _001_Calculator.Components
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("\b \n");
             Console.WriteLine($"Opperation {nameof(Multiplication)} has been selected.");
-            
 
-            double num1, num2;
-            (num1, num2) = validation.GetUserNumbers();
 
-            double result = num1 * num2;
+            decimal num1, num2;
+            (num1, num2) = Validation.GetUserNumbers();
+
+            decimal result = num1 * num2;
 
             Console.WriteLine($"{num1} * {num2} = {result}");
         }
@@ -60,23 +58,19 @@ namespace _001_Calculator.Components
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write("\b \n");
             Console.WriteLine($"Opperation {nameof(Division)} has been selected.");
-            
 
-            double num1, num2;
-            (num1, num2) = validation.GetUserNumbers();
+            try
+            {
+                decimal num1, num2;
+                (num1, num2) = Validation.GetUserNumbers();
 
-            double result = num1 / num2;
-
-            if (Double.IsInfinity(result))
+                decimal result = num1 / num2;
+            }
+            catch (DivideByZeroException ex)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error :: Division by Zero is not allowed");
+                Console.WriteLine(ex.Message);
                 Console.ForegroundColor = ConsoleColor.Gray;
-
-            }
-            else
-            {
-                Console.WriteLine($"{num1} / {num2} = {result}");
             }
         }
     }

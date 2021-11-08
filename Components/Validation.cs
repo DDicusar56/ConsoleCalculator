@@ -2,16 +2,24 @@
 
 namespace _001_Calculator.Components
 {
-    class Validation
-    {
-        private double UserDoubleValidation(string requestMsg)
+    internal static class Validation 
+    { 
+        public static (decimal, decimal) GetUserNumbers()
+        {
+            var num1 = UserDoubleValidation("Enter first number: ");
+            var num2 = UserDoubleValidation("Enter second number: ");
+
+            return (num1, num2);
+        }
+
+        private static decimal UserDoubleValidation(string requestMsg)
         {
 
-            double result;
+            decimal result;
 
             Console.Write(requestMsg);
 
-            while (!double.TryParse(Console.ReadLine(), out result))
+            while (!decimal.TryParse(Console.ReadLine(), out result))
             {
                 Console.WriteLine("Error :: Please enter a valid number ");
                 Console.Write(requestMsg);
@@ -20,14 +28,6 @@ namespace _001_Calculator.Components
             return result;
         }
 
-        public (double, double) GetUserNumbers()
-        {
-            double num1, num2;
-
-            num1 = UserDoubleValidation("Enter first number: ");
-            num2 = UserDoubleValidation("Enter second number: ");
-
-            return (num1, num2);
-        }
+        
     }
 }

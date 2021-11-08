@@ -3,21 +3,15 @@ using _001_Calculator.Components;
 
 namespace _001_Calculator
 {
-    class Calculator
+    internal static class Calculator
     {
 
-        private static CalculatorOperations operation = new CalculatorOperations();
-        private static CalculatorViews view = new CalculatorViews();
+        private static readonly CalculatorOperations Operation = new ();
+        private static readonly CalculatorViews View = new ();
         
         public static void Start()
         {
-            #region Console Configuration (WindowsOnly)
-#pragma warning disable CA1416 // Validate platform compatibility
-            Console.SetWindowSize(58, 30);
-#pragma warning restore CA1416 // Validate platform compatibility
-            #endregion
-
-            view.StartMenu();
+            CalculatorViews.StartMenu();
 
             while (true)
             {
@@ -26,20 +20,20 @@ namespace _001_Calculator
                 switch (userInput.Key)
                 {
                     case ConsoleKey.Add: case ConsoleKey.D1:
-                        operation.Addition();
-                        view.SelectNextOperation();
+                        Operation.Addition();
+                        View.SelectNextOperation();
                         break;
                     case ConsoleKey.Subtract: case ConsoleKey.D2:
-                        operation.Substraction();
-                        view.SelectNextOperation();
+                        Operation.Substraction();
+                        View.SelectNextOperation();
                         break;
                     case ConsoleKey.Multiply: case ConsoleKey.D3:
-                        operation.Multiplication();
-                        view.SelectNextOperation();
+                        Operation.Multiplication();
+                        View.SelectNextOperation();
                         break;
                     case ConsoleKey.Divide: case ConsoleKey.D4:
-                        operation.Division();
-                        view.SelectNextOperation();
+                        Operation.Division();
+                        View.SelectNextOperation();
 
                         break;
                     case ConsoleKey.Escape:
